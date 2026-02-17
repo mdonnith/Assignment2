@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<!-- saved from url=(0119)file:///C:/Users/adamp/OneDrive/Documents/Meghan%20Applied%20Agenic%20AI%20course/Assignment%202/index.html#field-notes -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Flora Form — Handcrafted Vessels for Forest Finds</title>
+  <meta name="description" content="Flora Form — handmade small-batch pottery in Easthampton, MA. Bud vases for the modern forager.">
+
+  <!-- Optional: nice serif pairing without JS frameworks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="./Flora Form — Handcrafted Vessels for Forest Finds_files/css2" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #F3EFE6;            /* warm cream */
+      --paper: rgba(255,255,255,.35);
+      --ink: #2E2A24;           /* deep brown */
+      --muted: rgba(46,42,36,.72);
+      --line: rgba(46,42,36,.18);
+      --forest: #2E4A34;        /* moss/forest */
+      --clay: #7B5A3A;          /* clay brown */
+      --card: rgba(255,255,255,.55);
+      --shadow: 0 18px 45px rgba(20,18,14,.12);
+      --radius: 18px;
+      --radius-lg: 24px;
+      --max: 1120px;
+    }
+
+    *{ box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      color: var(--ink);
+      background: var(--bg);
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    /* subtle paper grain + botanical corners */
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(46,74,52,.06), transparent 38%),
+        radial-gradient(circle at 85% 18%, rgba(123,90,58,.06), transparent 40%),
+        radial-gradient(circle at 80% 78%, rgba(46,74,52,.06), transparent 45%),
+        repeating-linear-gradient(0deg, rgba(0,0,0,.015), rgba(0,0,0,.015) 1px, transparent 1px, transparent 6px);
+      mix-blend-mode: multiply;
+      opacity: .55;
+      z-index: 0;
+    }
+
+    .container{
+      width: min(var(--max), calc(100% - 48px));
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Header */
+    header{
+      padding: 22px 0 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-row{
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .logo{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      text-decoration: none;
+      color: inherit;
+      user-select: none;
+    }
+    .logo img{
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    nav{
+      justify-self: end;
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      font-size: 14px;
+      letter-spacing: .02em;
+    }
+    nav a{
+      color: var(--muted);
+      text-decoration: none;
+      padding: 8px 10px;
+      border-radius: 999px;
+      transition: background .15s ease, color .15s ease;
+    }
+    nav a:hover{
+      background: rgba(46,42,36,.06);
+      color: var(--ink);
+    }
+
+    .header-spacer{ /* left side empty column for symmetry */
+      height: 1px;
+    }
+
+    /* Hero */
+    .hero{
+      padding: 28px 0 0;
+    }
+
+    .hero-card{
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(46,42,36,.12);
+      background: rgba(255,255,255,.25);
+    }
+
+    .hero-image{
+      position: relative;
+      height: 360px;
+      background: #111;
+    }
+    .hero-image img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.08) contrast(1.02);
+      transform: scale(1.01);
+    }
+    .hero-image::after{
+      content:"";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,.0), rgba(0,0,0,.16) 55%, rgba(0,0,0,.0));
+      pointer-events: none;
+    }
+
+    .hero-copy{
+      padding: 32px 22px 30px;
+      text-align: center;
+      background: rgba(255,255,255,.30);
+      border-top: 1px solid rgba(46,42,36,.12);
+    }
+
+    h1,h2,h3{
+      font-family: Fraunces, serif;
+      letter-spacing: .01em;
+      margin: 0;
+      font-weight: 600;
+    }
+    h1{
+      font-size: clamp(28px, 3.2vw, 44px);
+      line-height: 1.12;
+    }
+    .subhead{
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 60ch;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Section headings */
+    .section{
+      padding: 44px 0;
+    }
+    .section-title{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+      margin-bottom: 18px;
+    }
+    .section-title .rule{
+      height: 1px;
+      width: 64px;
+      background: var(--line);
+    }
+    .section-title h2{
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    /* Product grid */
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .product{
+      background: var(--card);
+      border: 1px solid rgba(46,42,36,.12);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(20,18,14,.08);
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .product:hover{
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(20,18,14,.12);
+    }
+    .product img{
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+      background: #fff;
+    }
+    .product-meta{
+      padding: 14px 16px 16px;
+      text-align: center;
+    }
+    .product-name{
+      font-family: Fraunces, serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .product-price{
+      margin-top: 6px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Foraging banner */
+    .banner{
+      margin: 10px 0 0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid rgba(46,42,36,.12);
+      background: linear-gradient(90deg, rgba(46,74,52,.92), rgba(46,74,52,.82));
+      position: relative;
+      box-shadow: 0 14px 34px rgba(20,18,14,.10);
+    }
+    .banner::before{
+      content:"";
+      position: absolute;
+      inset: 0;
+      opacity: .28;
+      background-image:
+        radial-gradient(circle at 10% 50%, rgba(255,255,255,.55) 1px, transparent 2px),
+        radial-gradient(circle at 18% 30%, rgba(255,255,255,.55) 1px, transparent 2px),
+        radial-gradient(circle at 25% 65%, rgba(255,255,255,.55) 1px, transparent 2px),
+        radial-gradient(circle at 84% 45%, rgba(255,255,255,.55) 1px, transparent 2px),
+        radial-gradient(circle at 92% 60%, rgba(255,255,255,.55) 1px, transparent 2px);
+      pointer-events: none;
+    }
+    .banner-inner{
+      padding: 18px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      position: relative;
+      z-index: 1;
+    }
+    .banner h3{
+      color: rgba(255,255,255,.96);
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+    }
+    .banner p{
+      margin: 4px 0 0;
+      color: rgba(255,255,255,.84);
+      font-size: 13px;
+      max-width: 70ch;
+    }
+    .btn{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,.55);
+      color: var(--forest);
+      background: #fff;
+      padding: 10px 14px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 13px;
+      white-space: nowrap;
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      filter: brightness(.98);
+    }
+
+    /* About */
+    .about{
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 18px;
+      align-items: start;
+      margin-top: 18px;
+    }
+    .about-card{
+      background: var(--card);
+      border: 1px solid rgba(46,42,36,.12);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 16px 44px rgba(20,18,14,.10);
+    }
+    .about-card img{
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+    }
+    .about-copy{
+      padding: 22px;
+    }
+    .kicker{
+      font-size: 13px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin: 6px 0 14px;
+    }
+    .about-copy h2{
+      font-size: 30px;
+      line-height: 1.15;
+    }
+    .about-copy p{
+      margin: 12px 0 0;
+      color: rgba(46,42,36,.82);
+      font-size: 14.5px;
+    }
+
+    /* Footer */
+    footer{
+      padding: 44px 0 54px;
+      border-top: 1px solid var(--line);
+      background: rgba(123,90,58,.06);
+    }
+
+    .footer-grid{
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 18px;
+      align-items: start;
+    }
+    .footer h3{
+      font-size: 22px;
+      margin: 0;
+    }
+    .footer p{
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 70ch;
+    }
+
+    .signup{
+      background: rgba(255,255,255,.45);
+      border: 1px solid rgba(46,42,36,.12);
+      border-radius: var(--radius);
+      padding: 14px;
+      display: grid;
+      gap: 10px;
+    }
+    .signup-row{
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+    }
+    input[type="email"]{
+      width: 100%;
+      padding: 12px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(46,42,36,.18);
+      background: rgba(255,255,255,.75);
+      font: inherit;
+      outline: none;
+    }
+    input[type="email"]:focus{
+      border-color: rgba(46,74,52,.45);
+      box-shadow: 0 0 0 4px rgba(46,74,52,.12);
+    }
+    .btn-clay{
+      background: var(--clay);
+      color: #fff;
+      border: 1px solid rgba(0,0,0,.08);
+      padding: 12px 14px;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .15s ease, filter .15s ease;
+    }
+    .btn-clay:hover{
+      transform: translateY(-1px);
+      filter: brightness(.98);
+    }
+
+    .social{
+      display: flex;
+      gap: 10px;
+      margin-top: 6px;
+    }
+    .icon{
+      width: 40px; height: 40px;
+      border-radius: 999px;
+      border: 1px solid rgba(46,42,36,.16);
+      background: rgba(255,255,255,.55);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ink);
+      text-decoration: none;
+      transition: background .15s ease, transform .15s ease;
+    }
+    .icon:hover{
+      background: rgba(255,255,255,.8);
+      transform: translateY(-1px);
+    }
+    .icon svg{ width: 18px; height: 18px; }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+      .product img{ height: 280px; }
+      .about{ grid-template-columns: 1fr; }
+      .about-card img{ height: 360px; }
+      .footer-grid{ grid-template-columns: 1fr; }
+      .header-row{ grid-template-columns: 1fr auto; }
+      .header-spacer{ display:none; }
+      nav{ justify-self: end; }
+      .logo{ justify-content: start; }
+    }
+    @media (max-width: 560px){
+      nav{ gap: 6px; }
+      nav a{ padding: 8px 8px; }
+      .hero-image{ height: 280px; }
+      .banner-inner{ flex-direction: column; align-items: flex-start; }
+      .btn{ width: 100%; }
+      .signup-row{ grid-template-columns: 1fr; }
+      .btn-clay{ width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="header-row">
+        <div class="header-spacer" aria-hidden="true"></div>
+
+        <a class="logo" href="file:///C:/Users/adamp/OneDrive/Documents/Meghan%20Applied%20Agenic%20AI%20course/Assignment%202/index.html#top" aria-label="Flora Form Home">
+          <!-- Replace with your logo file path -->
+          <img src="./Flora Form — Handcrafted Vessels for Forest Finds_files/logo-flora-form.png" alt="Flora Form logo">
+        </a>
+
+        <nav aria-label="Primary">
+          <a href="file:///C:/Users/adamp/OneDrive/Documents/Meghan%20Applied%20Agenic%20AI%20course/Assignment%202/index.html#shop">Shop</a>
+          <a href="file:///C:/Users/adamp/OneDrive/Documents/Meghan%20Applied%20Agenic%20AI%20course/Assignment%202/index.html#story">Our Story</a>
+          <a href="file:///C:/Users/adamp/OneDrive/Documents/Meghan%20Applied%20Agenic%20AI%20course/Assignment%202/index.html#guide">Foraging Guide</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-card">
+          <div class="hero-image">
+            <!-- Replace with your hero forest image -->
+            <img src="./Flora Form — Handcrafted Vessels for Forest Finds_files/hero-forest.jpg" alt="Massachusetts forest in peak autumn">
+          </div>
+          <div class="hero-copy">
+            <h1>Handcrafted Vessels for Forest Finds.</h1>
+            <p class="subhead">Handmade in Easthampton. Small-batch bud vases for the modern forager.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="shop" class="section">
+      <div class="container">
+        <div class="section-title">
+          <span class="rule"></span>
+          <h2>The Forager’s Choice</h2>
+          <span class="rule"></span>
+        </div>
+
+        <div class="grid" role="list">
+          <article class="product" role="listitem">
+            <img src="./Flora Form — Handcrafted Vessels for Forest Finds_files/root-pot.jpg" alt="The Root Pot — speckled ceramic pot">
+            <div class="product-meta">
+              <p class="product-name">The Root Pot</p>
+              <div class="product-price">$30</div>
+            </div>
+          </article>
+
+          <article class="product" role="listitem">
+            <img src="./Flora Form — Handcrafted Vessels for Forest Finds_files/woodland-bud-vase.jpg" alt="The Woodland Bud Vase — textured sand-colored bud vase">
+            <div class="product-meta">
+              <p class="product-name">The Woodland Bud Vase</p>
+              <div class="product-price">$45</div>
+            </div>
+          </article>
+
+          <article class="product" role="listitem">
+            <img src="./Flora Form — Handcrafted Vessels for Forest Finds_files/halo-planter.jpg" alt="The Halo Planter — circular ceramic planter with hollow center">
+            <div class="product-meta">
+              <p class="product-name">Halo Planter</p>
+              <div class="product-price">$65</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORAGING BANNER -->
+    <section id="guide" class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="banner" aria-label="Foraging Guide">
+          <div class="banner-inner">
+            <div>
+              <h3>The Flora Form Foraging Guide</h3>
+              <p>Learn to sustainably forage the Pioneer Valley.</p>
+            </div>
+            <a class="btn" href="file:///C:/Users/adamp/OneDrive/Documents/Meghan%20Applied%20Agenic%20AI%20course/Assignment%202/index.html#field-notes">Explore the Guide</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="story" class="section">
+      <div class="container">
+        <div class="about">
+          <figure class="about-card">
+            <!-- Replace with Chelsea + Flora photo -->
+            <img src="./Flora Form — Handcrafted Vessels for Forest Finds_files/chelsea-flora.jpg" alt="Chelsea in autumn woods with her white dog, Flora">
+          </figure>
+
+          <div class="about-copy about-card">
+            <div class="about-copy">
+              <h2>Rooted in the Wild</h2>
+              <div class="kicker">The Forager &amp; The Maker</div>
+
+              <p>
+                Chelsea’s hands have always been in the dirt. Originally from the towering forests of Oregon, her journey took her
+                through the rugged landscapes of Alaska before she finally found her "forever home" in the heart of Easthampton,
+                Massachusetts. With a degree in Environmental Science, Chelsea has spent her life studying the intricate balance
+                of the natural world—a perspective that now flows directly into her clay.
+              </p>
+
+              <p>
+                Flora Form was born from these wanderings. Whether she’s hiking the local peaks or scouting for mushrooms and wildflowers
+                with her husband, John, and their faithful canine muse, Flora, Chelsea is constantly gathering inspiration.
+                Her "happy place" is found in the small, often-overlooked details: the curve of a dried stem, the texture of moss on stone,
+                or the perfect symmetry of a woodland bud.
+              </p>
+
+              <p>
+                After a lifetime of exploring the wilderness, Chelsea is now bridging the gap between the forest floor and your home.
+                Flora Form creates small-batch pottery designed specifically to hold those tiny, found treasures—the little pieces of nature
+                that remind us to slow down, look closer, and breathe.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="field-notes">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>The Earthen Circle</h3>
+          <p>Join our Flora Form Community for seasonal foraging tips and first access to new kiln fires.</p>
+          <div class="social" aria-label="Social links">
+            <a class="icon" href="file:///C:/Users/adamp/OneDrive/Documents/Meghan%20Applied%20Agenic%20AI%20course/Assignment%202/index.html#" aria-label="Instagram">
+              <!-- Instagram icon -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
+                <path d="M16 11.5a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"></path>
+                <path d="M17.5 6.8h.01"></path>
+              </svg>
+            </a>
+            <a class="icon" href="file:///C:/Users/adamp/OneDrive/Documents/Meghan%20Applied%20Agenic%20AI%20course/Assignment%202/index.html#" aria-label="Pinterest">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12c0 4.22 2.62 7.83 6.33 9.29"></path>
+                <path d="M9.2 20.7c.2-1.1.5-2.9.6-3.4"></path>
+                <path d="M9.6 14.8c-.7-1.5 0-4 2.1-4 1.4 0 2.1.9 2.1 2 0 1.2-.8 3-1.2 4.6"></path>
+              </svg>
+            </a>
+            <a class="icon" href="file:///C:/Users/adamp/OneDrive/Documents/Meghan%20Applied%20Agenic%20AI%20course/Assignment%202/index.html#" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 6h16v12H4z"></path>
+                <path d="m4 7 8 6 8-6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <form class="signup" onsubmit="event.preventDefault(); alert(&#39;Thanks — you’re on the list!&#39;);">
+          <label for="email" style="font-weight:600; font-size:14px;">Email Sign-up</label>
+          <div class="signup-row">
+            <input id="email" type="email" placeholder="you@example.com" required="">
+            <button class="btn-clay" type="submit">Subscribe</button>
+          </div>
+          <small style="color: var(--muted);">No spam. Just seasonal notes, kiln drops, and foraging tips.</small>
+        </form>
+      </div>
+    </div>
+  </footer>
+
+
+
+</body></html>
